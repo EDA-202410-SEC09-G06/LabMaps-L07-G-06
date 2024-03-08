@@ -53,13 +53,14 @@ def newCatalog():
 
     Retorna el catalogo inicializado.
     """
-    # TODO lab 6, agregar llave de "titles" para el indice de libros
     catalog = {'books': None,
                'bookIds': None,
                'authors': None,
                'tags': None,
                'tagIds': None,
-               'years': None}
+               'years': None,
+               "book_titles":None
+               }
 
     """
     Esta lista contiene todo los libros encontrados
@@ -120,7 +121,10 @@ def newCatalog():
     La columna 'titles' del archivo books.csv
     """
     # TODO lab 6, agregar el ADT map con newMap()
-    catalog['titles'] = None
+    catalog['titles'] = mp.newMap(10000,
+                                  maptype="PROBING",
+                                  loadfactor=4,
+                                  cmpfunction=compareTitles)
 
     return catalog
 
