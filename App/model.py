@@ -120,7 +120,6 @@ def newCatalog():
     Este indice crea un map cuya llave es el titulo del libro
     La columna 'titles' del archivo books.csv
     """
-    # TODO lab 6, agregar el ADT map con newMap()
     catalog['titles'] = mp.newMap(10000,
                                   maptype="PROBING",
                                   loadfactor=4,
