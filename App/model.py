@@ -338,7 +338,7 @@ def getBookByTitle(catalog, title):
     """
     title=mp.get(catalog["titles"], title)
     if title:
-        return me.getValue(title)["books"]
+        return me.getValue(title)
     return None
 
 
@@ -455,7 +455,7 @@ def compareYears(year1, year2):
         return -1
 
 
-def compareTitles(title, book):
+def compareTitles(title1, title2):
     # TODO lab 6, cmp para comparar dos titulos de libros para ADT Map
     """ Completar la descripcion de compareTitles
 
@@ -467,4 +467,9 @@ def compareTitles(title, book):
         int: retrona 0 si son iguales, 1 si el primero es mayor
         y -1 si el primero es menor
     """
-    pass
+    if title1==title2:
+        return 0
+    elif title1>title2:
+        return 1
+    else:
+        return -1
