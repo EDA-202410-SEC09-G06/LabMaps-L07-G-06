@@ -127,6 +127,7 @@ def printMenu():
     print("4- Consultar los libros de un autor")
     print("5- Consultar los Libros por etiqueta")
     # TODO lab 6, agregar la opcion nueva del menu
+    print("6- Consultar los libros por un título")
     print("0- Salir")
 
 
@@ -164,6 +165,8 @@ while True:
 
     elif int(inputs[0]) == 6:
         # TODO lab 6, conectar con las funciones del controlador e imprimir
+        title=input("Título del libro que buscas ")
+        titlesinfo=controller.getBooksByTitle(ctrlr, title)
         pass
 
     elif int(inputs[0]) == 0:

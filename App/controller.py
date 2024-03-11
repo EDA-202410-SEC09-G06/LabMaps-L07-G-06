@@ -66,6 +66,8 @@ def loadBooks(control):
     booksfile = cf.data_dir + 'GoodReads/books-small.csv'
     input_file = csv.DictReader(open(booksfile, encoding='utf-8'))
     for book in input_file:
+        title=book["original_title"]
+        model.addBookTitle(control["model"],title, book)
         model.addBook(control['model'], book)
 
 
@@ -160,7 +162,7 @@ def getBooksByTitle(control, title):
     """
     Completar la descripcion de getBooksByTittle
     """
-    pass
+    titles=model.getBookByTitle(control["model"], title)
 
 
 def titlesSize(control):
@@ -168,4 +170,6 @@ def titlesSize(control):
     """
     Completar la descripcion de titlesSize
     """
+    return model.titlesSize(control["model"])
+
     pass
