@@ -272,8 +272,8 @@ def addBookTitle(catalog, title, book):
     Completar la descripcion de addBookTitle
     """
     titles=catalog["titles"]
-    existauthor = mp.contains(titles, title)
-    if existauthor:
+    existstitle = mp.contains(titles, title)
+    if existstitle:
         titulo = mp.get(titles, title)
         libro = me.getValue(titulo)
     else:
@@ -465,9 +465,10 @@ def compareTitles(title1, title2):
         int: retrona 0 si son iguales, 1 si el primero es mayor
         y -1 si el primero es menor
     """
-    if title1==title2:
+    title=me.getKey(title2)
+    if title1==title:
         return 0
-    elif title1>title2:
+    elif title1>title:
         return 1
     else:
         return -1
