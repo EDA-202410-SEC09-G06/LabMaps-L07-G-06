@@ -59,7 +59,7 @@ def newCatalog():
                'tags': None,
                'tagIds': None,
                'years': None,
-               "book_titles":None
+               "titles":None
                }
 
     """
@@ -121,7 +121,12 @@ def newCatalog():
     La columna 'titles' del archivo books.csv
     """
     # TODO lab 6, agregar el ADT map con newMap()
-    catalog['titles'] = None
+    catalog['titles'] = mp.newMap(10000,
+                                  maptype="PROBING",
+                                  loadfactor=0.5,
+                                  cmpfunction=compareTitles
+        
+    )
 
     return catalog
 
