@@ -109,12 +109,19 @@ def printBestBooks(books):
         print('No se encontraron libros.\n')
 
 
-def printBooksbyTitle(books):
+def printBooksbyTitle(book):
     # TODO lab 6, completar la funcion para imprimir los libros
     """
     Completar la descripcion de printBooksbyTitle
     """
-    pass
+    if book:
+        print('Libro encontrado: ' + book['book_name'])
+        print('Promedio: ' + str(book['average_rating']))
+        print('El autor es ' + book['author'])
+        print("El año de publicación es: " +book["publication_year"])
+    else:
+        print('No se encontro el autor.\n')
+        
 
 # Menu de opciones
 
@@ -127,6 +134,7 @@ def printMenu():
     print("4- Consultar los libros de un autor")
     print("5- Consultar los Libros por etiqueta")
     # TODO lab 6, agregar la opcion nueva del menu
+    print("6- Consultar los libros por un título")
     print("0- Salir")
 
 
@@ -164,7 +172,9 @@ while True:
 
     elif int(inputs[0]) == 6:
         # TODO lab 6, conectar con las funciones del controlador e imprimir
-        pass
+        title=input("Título del libro que buscas ")
+        titlesinfo=controller.getBooksByTitle(ctrlr, title)
+        printBooksbyTitle(titlesinfo)
 
     elif int(inputs[0]) == 0:
         break
